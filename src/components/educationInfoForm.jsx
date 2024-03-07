@@ -1,7 +1,7 @@
 // Education info includes school, degree, and date studied
 export function EducationInfo(value) {
   return (
-    <fieldset>
+    <fieldset name="educationInfo" form="resumeForm">
       <legend>Education Experience:</legend>
 
       <label htmlFor="school">University Attended:</label>

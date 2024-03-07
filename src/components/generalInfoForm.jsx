@@ -2,7 +2,7 @@
 
 export function GeneralInfo(value) {
   return (
-    <fieldset className="general-info">
+    <fieldset name="generalInfo" form="resumeForm">
       <legend>General Info</legend>
       <label htmlFor="first-name">First Name:</label>
       <input

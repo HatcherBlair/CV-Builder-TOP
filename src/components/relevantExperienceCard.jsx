@@ -5,7 +5,7 @@ export function RelevantExperienceCard(value) {
   // Haven't found out if the same start and end year from education is going to be a problem yet
 
   return (
-    <fieldset>
+    <fieldset form="resumeForm">
       <legend>{value.companyName ? value.companyName : "Job"}</legend>
 
       <label htmlFor="company-name">Company Name:</label>
