@@ -27,9 +27,7 @@ export function RelevantExperienceCard({
 
   return (
     <>
-      <legend>
-        <u>{companyName ? companyName : "Job"}</u>
-      </legend>
+      <h4 className="job-header">Job</h4>
 
       <div>
         <label htmlFor="company-name">Company Name:</label>
@@ -42,7 +40,6 @@ export function RelevantExperienceCard({
           onChange={(e) => onChange(e, index)}
         />
       </div>
-
       <div>
         <label htmlFor="job-title">Job Title:</label>
         <input
@@ -54,7 +51,6 @@ export function RelevantExperienceCard({
           onChange={(e) => onChange(e, index)}
         />
       </div>
-
       <div>
         <label htmlFor="start-year">Start year:</label>
         <input
@@ -66,7 +62,6 @@ export function RelevantExperienceCard({
           onChange={(e) => onChange(e, index)}
         />
       </div>
-
       <div>
         <label htmlFor="end-year">Completion year:</label>
         <input
@@ -78,7 +73,6 @@ export function RelevantExperienceCard({
           onChange={(e) => onChange(e, index)}
         />
       </div>
-
       <div className="responsibilities">
         <label htmlFor="responsibilities">Summary of Responsibilities:</label>
         <div className="responsibilities-list">
