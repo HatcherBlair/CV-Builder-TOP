@@ -3,11 +3,13 @@ export function ExperienceSection({ info }) {
     <div>
       <h2>Relevant Experience</h2>
       {info.map((job, i) => (
-        <div key={i}>
+        <div key={i} className="experience">
           <h4>{job.companyName ? job.companyName : "Company"}</h4>
           <h5>{job.title ? job.title : "Position"}</h5>
-          <p>Summary of Responsibilities</p>
-          <ul>
+          <p className="responsiblities-header-resume">
+            Summary of Responsibilities
+          </p>
+          <ul className="responsibilities-list">
             {job.responsibilities.map((task, subI) => (
               <li key={subI}>{job.responsibilities[subI]}</li>
             ))}

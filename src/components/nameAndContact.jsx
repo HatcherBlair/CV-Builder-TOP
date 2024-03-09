@@ -1,4 +1,4 @@
-import "../styles/nameAndContact.css";
+import "../styles/resume.css";
 
 export function NameAndContact({ info }) {
   return (

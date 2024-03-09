@@ -1,6 +1,58 @@
+/* Styling for everyhting */
 .resume {
   border: 2px solid blue;
   height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+legend {
+  grid-column: 1/-1;
+}
+
+/* Styling for general info section */
+.general-info {
+  grid-column: 1/-1;
+  padding: 20px;
+  border-bottom: 2px solid black;
+}
+
+/* Styling for education info section */
+.education-card {
   display: grid;
-  grid-template: 1fr 2fr 2fr / 1fr;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  padding: 1vw 1vh;
+  align-items: baseline;
+}
+
+.education-dates,
+.education-card > h5 {
+  padding-right: 20px;
+  justify-self: end;
+}
+
+.education-dates {
+  grid-column: 1/-1;
+}
+
+/* Styling for experience section */
+.experience {
+  display: grid;
+  grid-template: 1fr 1fr 3fr 5vh / 1fr 1fr;
+}
+
+.experience > h4,
+.responsiblities-header-resume {
+  justify-self: start;
+}
+
+.responsibilities-list {
+  grid-row: 3;
+  grid-column: 1/-1;
+  list-style: none;
+  text-align: left;
+}
+
+.experience > h5 {
+  justify-self: end;
 }
