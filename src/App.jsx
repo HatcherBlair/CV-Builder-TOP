@@ -16,12 +16,14 @@ function App() {
     state: "",
     github: "",
   });
-  const [educationInfo, setEducationInfo] = useState({
-    school: "",
-    degree: "",
-    startDate: "",
-    endDate: "",
-  });
+  const [educationInfo, setEducationInfo] = useState([
+    {
+      school: "",
+      degree: "",
+      startDate: "",
+      endDate: "",
+    },
+  ]);
   const [experienceInfo, setExperienceInfo] = useState([
     {
       companyName: "",
@@ -37,9 +39,23 @@ function App() {
     setGeneralInfo({ ...generalInfo, [name]: value });
   }
 
-  function handleEducationInfoChange(e) {
+  function handleEducationInfoChange(e, i) {
     const { name, value } = e.target;
-    setEducationInfo({ ...educationInfo, [name]: value });
+    const newEducationInfo = [...educationInfo];
+    newEducationInfo[i] = { ...newEducationInfo[i], [name]: value };
+    setEducationInfo(newEducationInfo);
+  }
+
+  function addEducation() {
+    setEducationInfo([
+      ...educationInfo,
+      {
+        school: "",
+        degree: "",
+        startDate: "",
+        endDate: "",
+      },
+    ]);
   }
 
   function handleExperienceInfoChange(e, i) {
@@ -101,11 +117,9 @@ function App() {
             onChange={handleGeneralInfoChange}
           />
           <EducationInfo
-            school={educationInfo.school}
-            degree={educationInfo.degree}
-            startDate={educationInfo.startDate}
-            endDate={educationInfo.endDate}
+            schools={educationInfo}
             onChange={handleEducationInfoChange}
+            addEducation={addEducation}
           />
           <RelevantExperienceInfo
             jobs={experienceInfo}
