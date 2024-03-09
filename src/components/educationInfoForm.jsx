@@ -18,7 +18,7 @@ export function EducationInfo({ schools, onChange, addEducation }) {
               id="school"
               placeholder="The University of Odin"
               value={school.school}
-              onChange={(e) => onChange(e)}
+              onChange={(e) => onChange(e, i)}
             />
           </div>
 
@@ -30,7 +30,7 @@ export function EducationInfo({ schools, onChange, addEducation }) {
               id="degree"
               placeholder="Fullstack Pro"
               value={school.degree}
-              onChange={(e) => onChange(e)}
+              onChange={(e) => onChange(e, i)}
             />
           </div>
 
@@ -42,7 +42,7 @@ export function EducationInfo({ schools, onChange, addEducation }) {
               id="start-year"
               placeholder="Yesterday"
               value={school.startDate}
-              onChange={(e) => onChange(e)}
+              onChange={(e) => onChange(e, i)}
             />
           </div>
 
@@ -54,7 +54,7 @@ export function EducationInfo({ schools, onChange, addEducation }) {
               id="end-year"
               placeholder="Ongoing"
               value={school.endDate}
-              onChange={(e) => onChange(e)}
+              onChange={(e) => onChange(e, i)}
             />
           </div>
         </div>
