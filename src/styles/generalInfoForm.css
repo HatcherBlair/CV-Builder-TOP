@@ -1,0 +1,18 @@
+#generalInfo {
+  padding: 1vw 1vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid red;
+  gap: 2vw 1vh;
+}
+
+#generalInfo > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+  border: 1px dotted blue;
+}
+
+legend {
+  grid-column: 1/-1;
+}

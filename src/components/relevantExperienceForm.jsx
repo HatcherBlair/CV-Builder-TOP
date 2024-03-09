@@ -1,4 +1,5 @@
 import { RelevantExperienceCard } from "./relevantExperienceCard";
+import "../styles/experienceInfoForm.css";
 
 export function RelevantExperienceInfo({
   jobs,
@@ -12,7 +13,7 @@ export function RelevantExperienceInfo({
       <legend>Relevant Experience</legend>
       {jobs.map((job, i) => {
         return (
-          <div key={i}>
+          <div key={i} className="job">
             <RelevantExperienceCard
               companyName={job.companyName}
               title={job.title}
@@ -22,10 +23,8 @@ export function RelevantExperienceInfo({
               onChange={onChange}
               index={i}
               responsibilityOnChange={responsibilityOnChange}
+              addResponsibility={addResponsibility}
             />
-            <button type="button" onClick={() => addResponsibility(i)}>
-              Add Responsibility
-            </button>
           </div>
         );
       })}

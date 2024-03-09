@@ -1,0 +1,27 @@
+#experienceInfo {
+  display: grid;
+  border: 1px solid green;
+  padding: 2vw 2vh;
+  gap: 1vw 1vh;
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1vw 1vh;
+}
+
+.job > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.responsibilities {
+  grid-column: span 2;
+}
+
+.responsibilities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
