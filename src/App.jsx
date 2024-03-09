@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Resume } from "./components/resume.jsx";
-import { InfoForm } from "./components/infoForm.jsx";
+import { GeneralInfo } from "./components/generalInfoForm.jsx";
+import { EducationInfo } from "./components/educationInfoForm.jsx";
+import { RelevantExperienceInfo } from "./components/relevantExperienceForm.jsx";
 import "./App.css";
 
 function App() {
@@ -24,55 +26,95 @@ function App() {
     {
       companyName: "",
       title: "",
-      responsibilities: [],
+      responsibilities: [""],
       startDate: "",
       endDate: "",
     },
   ]);
 
-  function updateGeneralInfo(info) {
-    setGeneralInfo(info);
+  function handleGeneralInfoChange(e) {
+    const { name, value } = e.target;
+    setGeneralInfo({ ...generalInfo, [name]: value });
   }
-  function updateEducationInfo(info) {
-    setEducationInfo(info);
+
+  function handleEducationInfoChange(e) {
+    const { name, value } = e.target;
+    setEducationInfo({ ...educationInfo, [name]: value });
   }
-  function updateExperienceInfo(info) {
-    setExperienceInfo(info);
+
+  function handleExperienceInfoChange(e, i) {
+    const { name, value } = e.target;
+    const updatedExperienceInfo = [...experienceInfo];
+    updatedExperienceInfo[i] = { ...updatedExperienceInfo[i], [name]: value };
+    setExperienceInfo(updatedExperienceInfo);
+  }
+
+  function addExperienceInfo() {
+    setExperienceInfo([
+      ...experienceInfo,
+      {
+        companyName: "",
+        title: "",
+        responsibilities: [""],
+        startDate: "",
+        endDate: "",
+      },
+    ]);
+  }
+
+  function addResponsiblity(i) {
+    const updatedExperienceInfo = [...experienceInfo];
+    updatedExperienceInfo[i].responsibilities.push("");
+    setExperienceInfo(updatedExperienceInfo);
+  }
+
+  function handleResponsibilityChange(e, i, subI) {
+    const updatedExperienceInfo = [...experienceInfo];
+    updatedExperienceInfo[i].responsibilities[subI] = e.target.value;
+    setExperienceInfo(updatedExperienceInfo);
   }
 
   function handleClick() {
-    if (submitted) {
-      // Change to edit screen and fill in form values
-    } else {
-      // Fill in Resume values
-      const formData = new FormData(document.getElementById("resumeForm"));
-      console.log(formData);
-    }
-
     setSubmitted(!submitted);
   }
-
   return (
     <>
-      <button onClick={handleClick}>{submitted ? "Edit" : "Submit"}</button>
+      <button onClick={handleClick}>
+        {submitted ? "Edit" : "View Resume"}
+      </button>
       {submitted ? (
         <Resume
           generalInfo={generalInfo}
-          updateGeneralInfo={updateGeneralInfo}
           educationInfo={educationInfo}
-          updateEducationInfo={updateEducationInfo}
           experienceInfo={experienceInfo}
-          updateExperienceInfo={updateExperienceInfo}
         />
       ) : (
-        <InfoForm
-          generalInfo={generalInfo}
-          updateGeneralInfo={updateGeneralInfo}
-          educationInfo={educationInfo}
-          updateEducationInfo={updateEducationInfo}
-          experienceInfo={experienceInfo}
-          updateExperienceInfo={updateExperienceInfo}
-        />
+        <>
+          <GeneralInfo
+            firstName={generalInfo.firstName}
+            lastName={generalInfo.lastName}
+            email={generalInfo.email}
+            phone={generalInfo.phone}
+            city={generalInfo.city}
+            state={generalInfo.state}
+            github={generalInfo.github}
+            onChange={handleGeneralInfoChange}
+          />
+          <EducationInfo
+            school={educationInfo.school}
+            degree={educationInfo.degree}
+            startDate={educationInfo.startDate}
+            endDate={educationInfo.endDate}
+            onChange={handleEducationInfoChange}
+          />
+          <RelevantExperienceInfo
+            jobs={experienceInfo}
+            onChange={handleExperienceInfoChange}
+            addExperienceInfo={addExperienceInfo}
+            responsibilityOnChange={handleResponsibilityChange}
+            addResponsibility={addResponsiblity}
+          />
+        </>
       )}
     </>
   );

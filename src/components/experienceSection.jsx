@@ -7,9 +7,9 @@ function Responsibilities(jobDescription) {
 }
 
 export function ExperienceSection({ info }) {
-  const jobs = info.map((job) => {
+  const jobs = info.map((job, i) => {
     return (
-      <div key={job.companyName}>
+      <div key={i}>
         <h4>{job.companyName}</h4>
         <h5>{job.title}</h5>
         <ul>{Responsibilities(job.responsibilities)}</ul>

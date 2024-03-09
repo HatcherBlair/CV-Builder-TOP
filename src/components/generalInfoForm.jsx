@@ -1,8 +1,17 @@
 // General info contains name, email, phone, city/state, and github
 
-export function GeneralInfo(value) {
+export function GeneralInfo({
+  firstName,
+  lastName,
+  email,
+  phone,
+  city,
+  state,
+  github,
+  onChange,
+}) {
   return (
-    <fieldset name="generalInfo" form="resumeForm">
+    <form id="generalInfo">
       <legend>General Info</legend>
       <label htmlFor="first-name">First Name:</label>
       <input
@@ -10,10 +19,9 @@ export function GeneralInfo(value) {
         name="firstName"
         id="first-name"
         placeholder="John/Jane"
-        required
-      >
-        {value.firstName}
-      </input>
+        value={firstName}
+        onChange={(e) => onChange(e)}
+      />
 
       <label htmlFor="last-name">Last Name:</label>
       <input
@@ -21,35 +29,49 @@ export function GeneralInfo(value) {
         name="lastName"
         id="last-name"
         placeholder="Doe"
-        required
-      >
-        {value.lastName}
-      </input>
+        value={lastName}
+        onChange={(e) => onChange(e)}
+      />
 
       <label htmlFor="email">Email Address:</label>
       <input
         type="email"
-        name="emailAddress"
+        name="email"
         id="email"
         placeholder="example@gmail.com"
-      >
-        {value.email}
-      </input>
+        value={email}
+        onChange={(e) => onChange(e)}
+      />
 
       <label htmlFor="phone">Phone Number</label>
-      <input type="tel" name="phoneNum" id="phone" placeholder="(888) 888-8888">
-        {value.phone}
-      </input>
+      <input
+        type="tel"
+        name="phone"
+        id="phone"
+        placeholder="(888) 888-8888"
+        value={phone}
+        onChange={(e) => onChange(e)}
+      />
 
       <label htmlFor="city">City:</label>
-      <input type="text" name="city" id="city" placeholder="city">
-        {value.city}
-      </input>
+      <input
+        type="text"
+        name="city"
+        id="city"
+        placeholder="city"
+        value={city}
+        onChange={(e) => onChange(e)}
+      />
 
       <label htmlFor="state">State:</label>
-      <input type="text" name="state" id="state" placeholder="ST">
-        {value.state}
-      </input>
+      <input
+        type="text"
+        name="state"
+        id="state"
+        placeholder="ST"
+        value={state}
+        onChange={(e) => onChange(e)}
+      />
 
       <label htmlFor="github">Github:</label>
       <input
@@ -57,10 +79,10 @@ export function GeneralInfo(value) {
         name="github"
         id="github"
         placeholder="HatcherBlair"
-        required
-      >
-        {value.github}
-      </input>
-    </fieldset>
+        value={github}
+        onChange={(e) => onChange(e)}
+      />
+      <button type="submit">Submit</button>
+    </form>
   );
 }
