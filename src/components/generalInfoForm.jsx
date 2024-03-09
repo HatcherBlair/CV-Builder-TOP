@@ -82,7 +82,6 @@ export function GeneralInfo({
         value={github}
         onChange={(e) => onChange(e)}
       />
-      <button type="submit">Submit</button>
     </form>
   );
 }
