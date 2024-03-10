@@ -14,7 +14,7 @@ export function ExperienceSection({ info }) {
               <li key={subI}>{job.responsibilities[subI]}</li>
             ))}
           </ul>
-          <p>
+          <p className="experience-dates">
             {job.startDate ? job.startDate : "Start Date"} -
             {job.endDate ? job.endDate : "End Date"}
           </p>

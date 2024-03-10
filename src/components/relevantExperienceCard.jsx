@@ -78,7 +78,11 @@ export function RelevantExperienceCard({
         <div className="responsibilities-list">
           {generateResponsibilities(responsibilities, index)}
         </div>
-        <button type="button" onClick={() => addResponsibility(index)}>
+        <button
+          type="button"
+          onClick={() => addResponsibility(index)}
+          className="exp-btn"
+        >
           Add Responsibility
         </button>
       </div>

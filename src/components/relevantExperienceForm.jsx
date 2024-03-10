@@ -28,7 +28,7 @@ export function RelevantExperienceInfo({
           </div>
         );
       })}
-      <button type="button" onClick={addExperienceInfo}>
+      <button type="button" onClick={addExperienceInfo} className="exp-btn">
         Add Experience
       </button>
     </form>

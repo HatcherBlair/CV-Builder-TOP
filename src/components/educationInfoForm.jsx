@@ -60,7 +60,7 @@ export function EducationInfo({ schools, onChange, addEducation }) {
         </div>
       ))}
 
-      <button type="button" onClick={addEducation}>
+      <button type="button" onClick={addEducation} className="add-school-btn">
         Add Degree
       </button>
     </form>

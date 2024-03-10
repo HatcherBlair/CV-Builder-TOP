@@ -2,17 +2,33 @@
   padding: 1vw 1vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 2px solid red;
+  border: 2px solid #aaa;
+  background-color: #e0e0e0;
+  border-radius: 8px;
   gap: 2vw 1vh;
+  margin: 2vw 1vh;
 }
 
 #generalInfo > div {
   display: flex;
   justify-content: space-between;
   padding: 2px;
-  border: 1px dotted blue;
+  border: 2px solid #ccc;
+  border-radius: 2px;
 }
 
 legend {
   grid-column: 1/-1;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+
+  outline: 2px solid transparent;
+}
+
+input:focus {
+  outline-color: #3498db;
 }

@@ -1,6 +1,6 @@
 export function EducationSection({ info }) {
   return (
-    <div>
+    <div className="education">
       <h2>Education</h2>
       {info.map((school, i) => (
         <div key={i} className="education-card">

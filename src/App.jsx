@@ -95,7 +95,7 @@ function App() {
   }
   return (
     <>
-      <button onClick={handleClick}>
+      <button onClick={handleClick} className="switch-view-btn">
         {submitted ? "Edit" : "View Resume"}
       </button>
       {submitted ? (
